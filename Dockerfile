@@ -12,7 +12,7 @@ COPY internal/ internal/
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /out/ecr-vscode-proxy ./cmd/server
 
 # --- runtime stage ---
-FROM alpine:3.20
+FROM alpine:3.24
 
 # Default to uid/gid 1000 so the container can read a bind-mounted host
 # ~/.aws (owned by the host user, mode 0600); override at build time if
