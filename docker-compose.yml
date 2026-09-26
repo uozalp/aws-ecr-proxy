@@ -1,0 +1,17 @@
+services:
+  ecr-vscode-proxy:
+    build:
+      context: .
+      args:
+        APP_UID: ${UID:-1000}
+        APP_GID: ${GID:-1000}
+    ports:
+      - "5000:5000"
+    environment:
+      AWS_REGION: ${AWS_REGION}
+      ECR_REGISTRY: ${ECR_REGISTRY}
+      AWS_PROFILE: ${AWS_PROFILE:-}
+      PORT: "5000"
+      CATALOG_CACHE_SECONDS: "60"
+    volumes:
+      - ~/.aws:/home/app/.aws
