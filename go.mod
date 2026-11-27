@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/aws/aws-sdk-go-v2/config v1.33.19
-	github.com/aws/aws-sdk-go-v2/service/ecr v1.67.1
+	github.com/aws/aws-sdk-go-v2/service/ecr v1.69.0
 )
 
 require (
